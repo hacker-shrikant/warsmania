@@ -1,0 +1,158 @@
+html {
+    box-sizing: border-box;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background-color: black;
+  }
+  
+  .loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    z-index: 1000;
+  }
+  
+  #bg-canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  
+  .slider {
+    width: 100%;
+    height: 70vh;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  #in-canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+  }
+  
+  .container {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    z-index: 10;
+  }
+  
+  .slide {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+  }
+  
+  .slide:nth-child(1) {
+    left: 0%;
+  }
+  
+  .slide:nth-child(2) {
+    left: 100%;
+  }
+  
+  .slide:nth-child(3) {
+    left: 200%;
+  }
+  
+  .slide:nth-child(4) {
+    left: 300%;
+  }
+  
+  .bg {
+    position: relative;
+    z-index: 1;
+    height: 60vh;
+    width: 70%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+  }
+  .bg:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .controls {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 100;
+  }
+  
+  .cont-list {
+    display: inline-block;
+    vertical-align: middle;
+    list-style: none;
+  }
+  .cont-list li {
+    display: inline-block;
+    margin: 10px;
+  }
+  .cont-list li.active span {
+    background-color: #ebebeb;
+  }
+  .cont-list span {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #ebebeb;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .prev,
+  .next {
+    display: inline-block;
+    width: 50px;
+    margin: 0 10px;
+    z-index: 100;
+    font-size: 52px;
+    line-height: 1;
+    text-align: center;
+    color: #ebebeb;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
+  
+  .prev {
+    right: 150px;
+  }
+  
+  .next {
+    right: 20px;
+  }
