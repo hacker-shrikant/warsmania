@@ -1,8 +1,10 @@
 import React from 'react';
 import './drawer.css';
 
-import  Cards from "../../Cards.js";
-import Slider from "../../slide_show/Slider.js";
+import  Cards from "../cards/Cards.js";
+import Slider from "../slide_show/Slider.js";
+
+import SearchBar from "../search bar/Searchbar.js";
 //  
 class Drawer extends React.Component{
 
@@ -27,6 +29,8 @@ class Drawer extends React.Component{
                 <li className="menu__item" style={{x: 70, y: 74}}><a className="menu__link" href="#WORK">WORK</a></li>
               </ul>
             </nav>
+
+            <SearchBar/>
             <Slider/>
               <Cards/>
             <svg style={{position:" absolute", left: 100+"%"}}>

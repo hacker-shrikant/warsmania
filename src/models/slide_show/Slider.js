@@ -4,7 +4,7 @@ import $ from 'jquery';
 
 import "./slider.css";
 
-import '../fontawesome.js';
+import '../../fontawesome.js';
 
 
 
@@ -61,40 +61,40 @@ class Slider extends React.Component {
     });
     var imgagesource = imagesources[0];
   
-    function random(min, max) {
-      return Math.floor(Math.random() * (max - min + 1) + min);
-    }
+    // function random(min, max) {
+    //   return Math.floor(Math.random() * (max - min + 1) + min);
+    // }
   
-    function distance(x, y) {
-      var hypotenuse = Math.round(Math.sqrt(x * x + y * y));
-      return hypotenuse;
-    }
+    // function distance(x, y) {
+    //   var hypotenuse = Math.round(Math.sqrt(x * x + y * y));
+    //   return hypotenuse;
+    // }
   
-    function CreateStars() {
-      this.r = random(10, 20);
-      this.x = random(0, distance(halfW, halfH));
-      this.y = 0;
-      this.rotation = random(0, 360) * Math.PI / 180;
-      this.speed = random(0, .5) * Math.PI / 40;
+    // function CreateStars() {
+    //   this.r = random(10, 20);
+    //   this.x = random(0, distance(halfW, halfH));
+    //   this.y = 0;
+    //   this.rotation = random(0, 360) * Math.PI / 180;
+    //   this.speed = random(0, .5) * Math.PI / 40;
   
-      this.draw = function() {
-        var grd = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.r);
-        grd.addColorStop(0, '#fff');
-        grd.addColorStop(0.1, 'hsl(' + color + ', 61%, 33%)');
-        grd.addColorStop(0.25, 'hsl(' + color + ', 64%, 6%)');
-        grd.addColorStop(1, 'transparent');
-        bgCtx.save();
-        bgCtx.translate(halfW, halfH);
-        bgCtx.rotate(this.rotation);
-        bgCtx.beginPath();
-        bgCtx.fillStyle = grd;
-        bgCtx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false);
-        bgCtx.fill();
-        bgCtx.restore();
+    //   this.draw = function() {
+    //     var grd = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.r);
+    //     grd.addColorStop(0, '#fff');
+    //     grd.addColorStop(0.1, 'hsl(' + color + ', 61%, 33%)');
+    //     grd.addColorStop(0.25, 'hsl(' + color + ', 64%, 6%)');
+    //     grd.addColorStop(1, 'transparent');
+    //     bgCtx.save();
+    //     bgCtx.translate(halfW, halfH);
+    //     bgCtx.rotate(this.rotation);
+    //     bgCtx.beginPath();
+    //     bgCtx.fillStyle = grd;
+    //     bgCtx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false);
+    //     bgCtx.fill();
+    //     bgCtx.restore();
   
-        this.rotation += this.speed / 50;
-      };
-    }
+    //     this.rotation += this.speed / 50;
+    //   };
+    // }
   
     function CreateMask() {
       img.src = imgagesource;
@@ -144,7 +144,7 @@ class Slider extends React.Component {
       this.changeSlide = function(pos) {
         this.controls.removeClass('active').eq(pos).addClass('active');
         this.view.animate({
-          view: (200 * pos)
+          view: (100 * pos)
         }, {
           step: function(now) {
             $(this).css('transform', 'translate(-' + now + '%, 0%)');
@@ -241,22 +241,22 @@ class Slider extends React.Component {
       requestAnimationFrame(animateStars);
     };
   
-    function init() {
-      slider = new CreateSlider();
-      mask = new CreateMask();
-      masks.push(mask);
-      for (i = 0; i < starsNum; i++) {
-        var star = new CreateStars();
-        stars.push(star);
-      }
-      slider.constraction();
-      animateMask.in();
-      animateStars();
-    }
+    // function init() {
+    //   slider = new CreateSlider();
+    //   mask = new CreateMask();
+    //   masks.push(mask);
+    //   for (i = 0; i < starsNum; i++) {
+    //     var star = new CreateStars();
+    //     stars.push(star);
+    //   }
+    //   slider.constraction();
+    //   animateMask.in();
+    //   animateStars();
+    // }
   
     window.addEventListener('load', function() {
       $('.loader').hide();
-      init();
+      // init();
     });
     window.addEventListener('resize', function() {
       mask.draw();
