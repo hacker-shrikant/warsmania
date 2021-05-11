@@ -144,7 +144,7 @@ class Slider extends React.Component {
       this.changeSlide = function(pos) {
         this.controls.removeClass('active').eq(pos).addClass('active');
         this.view.animate({
-          view: (100 * pos)
+          view: (200 * pos)
         }, {
           step: function(now) {
             $(this).css('transform', 'translate(-' + now + '%, 0%)');
@@ -273,7 +273,7 @@ class Slider extends React.Component {
   <div class="container">
     <div class="slide">
       <div class="bg">
-        <img src="https://mrreiha.keybase.pub/codepen/hover-fx/news2.png"/>
+        <img src="https://www.clearias.com/up/First-World-War.png"   alt="hjb"/>
       </div>
     </div>
     <div class="slide">
