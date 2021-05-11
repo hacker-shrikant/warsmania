@@ -17,7 +17,11 @@ class Cards extends React.Component {
 
         <img src="https://static.toiimg.com/thumb/msid-70388666,imgsize-1251481,width-400,resizemode-4/70388666.jpg" />
 
-        <figcaption>Dota 2</figcaption>
+        <figcaption><h2>
+
+           
+
+        </h2></figcaption>
 
     </figure>
 

@@ -25,7 +25,8 @@ class Slider extends React.Component {
     var bgCtx = bgCanvas.getContext('2d');
   
     var w = canvas.width = bgCanvas.width = $(window).width();
-    var h = canvas.height = bgCanvas.height = $(window).height();
+    var h = canvas.height = bgCanvas.height = $(window).outerHeight();
+    var h1 = canvas.height = bgCanvas.height = $(window).outerHeight(); 
     $(window).on('resize', function() {
       w = canvas.width = bgCanvas.width = $(window).width();
       h = canvas.height = bgCanvas.height = $(window).height();
@@ -35,7 +36,7 @@ class Slider extends React.Component {
     var slider;
     var masks = [];
     var stars = [];
-    var starsNum = 500;
+    var starsNum = 600;
     var isAnimated = false;
     var maskSettings = {
       x: 0,
@@ -74,7 +75,7 @@ class Slider extends React.Component {
       this.x = random(0, distance(halfW, halfH));
       this.y = 0;
       this.rotation = random(0, 360) * Math.PI / 180;
-      this.speed = random(0, .5) * Math.PI / 180;
+      this.speed = random(0, .5) * Math.PI / 40;
   
       this.draw = function() {
         var grd = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.r);

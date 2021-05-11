@@ -2,9 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-import Cards from "./Cards.js";
+import Drawer from './models/drawer/Drawer.js';
 
-import Slider from "./slide_show/Slider.js";
 // import App from './App';
 // import reportWebVitals from './reportWebVitals';
 
@@ -12,8 +11,8 @@ ReactDOM.render(
 
 
    <>
-<Slider/>
-<Cards/>     
+   <Drawer/>
+    
    </>
 
  ,
